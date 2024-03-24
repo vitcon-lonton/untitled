@@ -28,190 +28,195 @@ class BG extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.topCenter,
-      children: [
-        Assets.bg.matchsLight.image(width: double.infinity, fit: BoxFit.fill),
-        Column(
-          children: [
-            SizedBox(
-              height: 75,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    const Expanded(
-                      flex: 3,
-                      child: Row(
-                        children: [
-                          Flexible(
-                            flex: 3,
-                            child:
-                                Text('Ngày 12/09', textAlign: TextAlign.center),
-                          ),
-                          // const SizedBox(width: 4),
-                          Expanded(
-                            flex: 5,
-                            child: Card.filled(
-                              margin: EdgeInsets.zero,
-                              color: Colors.black54,
-                              child: Center(
-                                child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.symmetric(horizontal: 4.0),
-                                      child: Card.filled(
-                                        color: Colors.red,
-                                        margin: EdgeInsets.zero,
-                                        child: Center(child: Text('Phút 45')),
+    return SizedBox(
+      width: double.infinity,
+      height: 400,
+      child: Stack(
+        alignment: Alignment.topCenter,
+        children: [
+          Assets.bg.matchsLight.image(width: double.infinity, fit: BoxFit.fill),
+          Column(
+            children: [
+              SizedBox(
+                height: 75,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      const Expanded(
+                        flex: 3,
+                        child: Row(
+                          children: [
+                            Flexible(
+                              flex: 3,
+                              child: Text('Ngày 12/09',
+                                  textAlign: TextAlign.center),
+                            ),
+                            // const SizedBox(width: 4),
+                            Expanded(
+                              flex: 5,
+                              child: Card.filled(
+                                margin: EdgeInsets.zero,
+                                color: Colors.black54,
+                                child: Center(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.stretch,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 4.0),
+                                        child: Card.filled(
+                                          color: Colors.red,
+                                          margin: EdgeInsets.zero,
+                                          child: Center(child: Text('Phút 45')),
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(height: 4),
-                                    Center(child: Text('0-0')),
-                                  ],
+                                      SizedBox(height: 4),
+                                      Center(child: Text('0-0')),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        flex: 8,
+                        child: Container(
+                          color: Colors.transparent,
+                          // color: Colors.black,
+                          child: const DefaultTextStyle(
+                            style: TextStyle(
+                                color: Colors.amber,
+                                fontWeight: FontWeight.w700),
+                            child: Wrap(
+                              spacing: 4,
+                              runSpacing: 4,
+                              alignment: WrapAlignment.spaceEvenly,
+                              children: [
+                                Text('FT.HDP'),
+                                Text('FT.O/U'),
+                                Text('FT.1X2'),
+                                Text('1H.HDP'),
+                                Text('1H.O/U'),
+                                Text('1H.1X2'),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: Column(children: [
+                        Container(
+                          constraints: const BoxConstraints(
+                            minHeight: 52,
+                            minWidth: 42,
+                            maxHeight: 65,
+                          ),
+                          child: const Text('Belarus U21'),
+                        ),
+                        Container(
+                          constraints: const BoxConstraints(
+                            minHeight: 52,
+                            minWidth: 42,
+                            maxHeight: 65,
+                          ),
+                          child: const Text('Portugal U21'),
+                        ),
+                        Container(
+                          constraints: const BoxConstraints(
+                            minHeight: 52,
+                            minWidth: 42,
+                            maxHeight: 65,
+                          ),
+                          child: const Text('Hòa'),
+                        ),
+                      ]),
                     ),
                     const SizedBox(width: 12),
                     Expanded(
-                      flex: 8,
+                      flex: 4,
                       child: Container(
                         color: Colors.transparent,
                         // color: Colors.black,
-                        child: const DefaultTextStyle(
-                          style: TextStyle(
-                              color: Colors.amber, fontWeight: FontWeight.w700),
-                          child: Wrap(
-                            spacing: 4,
-                            runSpacing: 4,
-                            alignment: WrapAlignment.spaceEvenly,
-                            children: [
-                              Text('FT.HDP'),
-                              Text('FT.O/U'),
-                              Text('FT.1X2'),
-                              Text('1H.HDP'),
-                              Text('1H.O/U'),
-                              Text('1H.1X2'),
-                            ],
-                          ),
+                        child: const Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Wrap(
+                              spacing: 4,
+                              runSpacing: 4,
+                              alignment: WrapAlignment.spaceEvenly,
+                              children: [WCard(), WCard(), WCard()],
+                            ),
+                            SizedBox(height: 12),
+                            Wrap(
+                              spacing: 4,
+                              runSpacing: 4,
+                              alignment: WrapAlignment.spaceEvenly,
+                              children: [WCard(), WCard(), WCard()],
+                            ),
+                            SizedBox(height: 12),
+                            Wrap(
+                              spacing: 4,
+                              runSpacing: 4,
+                              alignment: WrapAlignment.spaceEvenly,
+                              children: [WCard(), WCard(), WCard()],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 4,
+                      child: Container(
+                        color: Colors.transparent,
+                        // color: Colors.black,
+                        child: const Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Wrap(
+                              spacing: 4,
+                              runSpacing: 4,
+                              alignment: WrapAlignment.spaceEvenly,
+                              children: [WCard(), WCard(), WCard()],
+                            ),
+                            SizedBox(height: 12),
+                            Wrap(
+                              spacing: 4,
+                              runSpacing: 4,
+                              alignment: WrapAlignment.spaceEvenly,
+                              children: [WCard(), WCard(), WCard()],
+                            ),
+                            SizedBox(height: 12),
+                            Wrap(
+                              spacing: 4,
+                              runSpacing: 4,
+                              alignment: WrapAlignment.spaceEvenly,
+                              children: [WCard(), WCard(), WCard()],
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   ],
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 3,
-                    child: Column(children: [
-                      Container(
-                        constraints: const BoxConstraints(
-                          minHeight: 52,
-                          minWidth: 42,
-                          maxHeight: 65,
-                        ),
-                        child: const Text('Belarus U21'),
-                      ),
-                      Container(
-                        constraints: const BoxConstraints(
-                          minHeight: 52,
-                          minWidth: 42,
-                          maxHeight: 65,
-                        ),
-                        child: const Text('Portugal U21'),
-                      ),
-                      Container(
-                        constraints: const BoxConstraints(
-                          minHeight: 52,
-                          minWidth: 42,
-                          maxHeight: 65,
-                        ),
-                        child: const Text('Hòa'),
-                      ),
-                    ]),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    flex: 4,
-                    child: Container(
-                      color: Colors.transparent,
-                      // color: Colors.black,
-                      child: const Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Wrap(
-                            spacing: 4,
-                            runSpacing: 4,
-                            alignment: WrapAlignment.spaceEvenly,
-                            children: [WCard(), WCard(), WCard()],
-                          ),
-                          SizedBox(height: 12),
-                          Wrap(
-                            spacing: 4,
-                            runSpacing: 4,
-                            alignment: WrapAlignment.spaceEvenly,
-                            children: [WCard(), WCard(), WCard()],
-                          ),
-                          SizedBox(height: 12),
-                          Wrap(
-                            spacing: 4,
-                            runSpacing: 4,
-                            alignment: WrapAlignment.spaceEvenly,
-                            children: [WCard(), WCard(), WCard()],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 4,
-                    child: Container(
-                      color: Colors.transparent,
-                      // color: Colors.black,
-                      child: const Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Wrap(
-                            spacing: 4,
-                            runSpacing: 4,
-                            alignment: WrapAlignment.spaceEvenly,
-                            children: [WCard(), WCard(), WCard()],
-                          ),
-                          SizedBox(height: 12),
-                          Wrap(
-                            spacing: 4,
-                            runSpacing: 4,
-                            alignment: WrapAlignment.spaceEvenly,
-                            children: [WCard(), WCard(), WCard()],
-                          ),
-                          SizedBox(height: 12),
-                          Wrap(
-                            spacing: 4,
-                            runSpacing: 4,
-                            alignment: WrapAlignment.spaceEvenly,
-                            children: [WCard(), WCard(), WCard()],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        )
-      ],
+            ],
+          )
+        ],
+      ),
     );
   }
 }
