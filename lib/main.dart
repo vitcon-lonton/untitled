@@ -1,47 +1,25 @@
+import 'package:device_preview_minus/device_preview_minus.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled/ball/demo_screen.dart';
-
-import 'ball/colors.dart';
+import 'demo/demo_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
+  runApp(DevicePreview(builder: (context) => const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+      // title: 'Flutter Demo',
+      // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(gradient: AppColors.gradient2),
-        ),
-      ),
-      body: const Center(child: DemoList1(showSecondList: true)),
+      theme: ThemeData(fontFamily: 'Roboto'),
+      home: const DemoScreen(),
     );
   }
 }
