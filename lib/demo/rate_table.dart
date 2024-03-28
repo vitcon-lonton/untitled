@@ -248,10 +248,14 @@ class _PointCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 4.0),
+                  // padding: EdgeInsets.symmetric(horizontal: 4.0),
+                  padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 4.0),
                   child: Center(
                     child: Text(
                       'Phút 45 -',
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         color: AppColors.yellow1,
                         fontWeight: FontWeight.w900,

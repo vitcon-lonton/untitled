@@ -8,7 +8,7 @@ class Commentator extends StatelessWidget {
   const Commentator({super.key});
 
   static const minWidth = 190.0;
-  static const spacing = 6 * 4;
+  static const spacing = 24;
   static const rowDivider = SizedBox(width: 12);
 
   @override

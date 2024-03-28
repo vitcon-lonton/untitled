@@ -33,24 +33,28 @@ class DemoScreen extends StatelessWidget {
     List<double?> heights = List.filled(children.length, null);
 
     // Fully traverse this list before moving on.
-    return Scaffold(
-      appBar: GradientAppBar(),
-      body: FocusTraversalGroup(
-        child: CustomScrollView(
-          slivers: [
-            SliverList(
-              delegate: BuildSlivers(
-                heights: heights,
-                builder: (context, index) {
-                  return _CacheHeight(
-                    heights: heights,
-                    index: index,
-                    child: children[index],
-                  );
-                },
+    return MediaQuery(
+      data: MediaQuery.of(context)
+          .copyWith(textScaler: const TextScaler.linear(0.75)),
+      child: Scaffold(
+        appBar: GradientAppBar(),
+        body: FocusTraversalGroup(
+          child: CustomScrollView(
+            slivers: [
+              SliverList(
+                delegate: BuildSlivers(
+                  heights: heights,
+                  builder: (context, index) {
+                    return _CacheHeight(
+                      heights: heights,
+                      index: index,
+                      child: children[index],
+                    );
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -94,44 +98,6 @@ class _ComponentDecorationState extends State<ComponentDecoration> {
                   ),
                   child: Center(
                     child: widget.child,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-
-    return RepaintBoundary(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 0),
-        // padding: const EdgeInsets.symmetric(vertical: smallSpacing),
-        child: Column(
-          children: [
-            ConstrainedBox(
-              constraints:
-                  const BoxConstraints.tightFor(width: widthConstraint),
-              // Tapping within the a component card should request focus
-              // for that component's children.
-              child: Focus(
-                focusNode: focusNode,
-                canRequestFocus: true,
-                child: GestureDetector(
-                  onTapDown: (_) {
-                    focusNode.requestFocus();
-                  },
-                  behavior: HitTestBehavior.opaque,
-                  child: Card.outlined(
-                    // elevation: 0,
-                    margin: EdgeInsets.zero,
-                    shape: const RoundedRectangleBorder(
-                      side: BorderSide.none,
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                    ),
-                    child: Center(
-                      child: widget.child,
-                    ),
                   ),
                 ),
               ),

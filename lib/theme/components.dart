@@ -4,6 +4,7 @@ import 'package:gradient_borders/gradient_borders.dart';
 import 'colors.dart';
 
 const _borderRadius = BorderRadius.all(Radius.circular(80.0));
+const _minimumSize = Size(50.0, 40.0);
 
 class PrimaryGradientButton extends StatelessWidget {
   const PrimaryGradientButton({
@@ -27,7 +28,7 @@ class PrimaryGradientButton extends StatelessWidget {
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
-          minimumSize: const Size(50.0, 50.0),
+          minimumSize: _minimumSize,
           // padding: const EdgeInsets.symmetric(horizontal: 4),
           side: BorderSide.none,
           foregroundColor: AppColors.yellow1,
@@ -57,7 +58,7 @@ class SecondaryGradientButton extends StatelessWidget {
       child: OutlinedButton(
         onPressed: () {},
         style: OutlinedButton.styleFrom(
-          minimumSize: const Size(50.0, 50.0),
+          minimumSize: _minimumSize,
           side: BorderSide.none,
           foregroundColor: Colors.black,
           textStyle: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
@@ -95,7 +96,7 @@ class GradientOutlineButton extends StatelessWidget {
         style: OutlinedButton.styleFrom(
           padding: const EdgeInsets.symmetric(horizontal: 4),
           elevation: 0,
-          minimumSize: const Size(50.0, 50.0),
+          minimumSize: _minimumSize,
           side: BorderSide.none,
           backgroundColor: AppColors.bg,
           foregroundColor: AppColors.black,
